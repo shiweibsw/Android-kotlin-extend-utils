@@ -6,7 +6,7 @@ import android.graphics.Color
 import android.view.View
 
 /**
- * View to bitmap
+ * View 转 bitmap
  */
 fun View.view2Bitmap(): Bitmap {
     var ret = Bitmap.createBitmap(this.width, this.height, Bitmap.Config.ARGB_8888)

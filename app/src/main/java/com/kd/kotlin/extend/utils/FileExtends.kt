@@ -5,7 +5,7 @@ import android.graphics.BitmapFactory
 import java.io.File
 
 /**
- * file to bitmap
+ * file 转 bitmap
  */
 fun File.getBitmap(): Bitmap {
     return BitmapFactory.decodeFile(this.absolutePath)
