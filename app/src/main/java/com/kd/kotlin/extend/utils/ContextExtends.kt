@@ -5,18 +5,24 @@ import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
+import android.view.Gravity
 import android.widget.Toast
 
 
 
 //----------toast----------
 fun Context.toast(text: CharSequence, duration: Int = Toast.LENGTH_SHORT){
-    Toast.makeText(this,text,duration)
+    Toast.makeText(this,text,duration).show()
+}
+fun Context.toast(resId: Int, duration: Int = Toast.LENGTH_SHORT){
+    Toast.makeText(this,resId,duration).show()
+}
+fun Context.centerToast(resId: Int, duration: Int = Toast.LENGTH_SHORT){
+    var t=Toast.makeText(this,resId,duration)
+    t.setGravity(Gravity.CENTER,0,0)
+    t.show()
 }
 
-fun Context.toast(resId: Int, duration: Int = Toast.LENGTH_SHORT){
-    Toast.makeText(this,resId,duration)
-}
 //----------NetWork----------
 /**
  * 打开网络设置
