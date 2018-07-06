@@ -1,8 +1,12 @@
 package com.kd.kotlin.extend.utils
 
 import android.app.Activity
+import android.content.pm.ActivityInfo
 import android.graphics.Bitmap
 import android.util.DisplayMetrics
+import android.view.View
+import android.view.WindowManager
+import android.view.inputmethod.InputMethodManager
 
 /**
  * 屏幕截图
@@ -26,3 +30,54 @@ fun Activity.screenShot(activity: Activity, isDeleteStatusBar: Boolean = true): 
     decorView.destroyDrawingCache()
     return ret!!
 }
+
+/**
+ * 设置竖屏
+ */
+fun Activity.setPortrait() {
+    this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+}
+
+/**
+ * 设置横屏
+ */
+fun Activity.setLandscape() {
+    this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+}
+
+/**
+ * 设置全屏
+ */
+fun Activity.setFullScreen() {
+    this.window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN or WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+}
+
+/**
+ * 显示软键盘
+ */
+fun Activity.showKeyboard() {
+    var imm: InputMethodManager = this.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            ?: return
+    var view = this.currentFocus
+    if (view == null) {
+        view = View(this)
+        view!!.isFocusable = true
+        view!!.isFocusableInTouchMode = true
+        view!!.requestFocus()
+    }
+    imm.showSoftInput(view, InputMethodManager.SHOW_FORCED)
+}
+
+/**
+ * 隐藏软键盘
+ */
+fun Activity.hideKeyboard() {
+    var imm: InputMethodManager = this.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            ?: return
+    var view = this.currentFocus
+    if (view == null) {
+        view = View(this)
+    }
+    imm.hideSoftInputFromWindow(view.windowToken, 0)
+}
+

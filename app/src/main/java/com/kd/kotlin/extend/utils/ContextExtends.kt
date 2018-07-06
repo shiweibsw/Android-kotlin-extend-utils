@@ -3,6 +3,7 @@ package com.kd.kotlin.extend.utils
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.graphics.Point
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
@@ -75,6 +76,14 @@ fun Context.getScreenHeight(): Int {
     return point.y
 }
 
+fun Context.isPortrait(): Boolean {
+    return resources.configuration.orientation === Configuration.ORIENTATION_PORTRAIT
+}
+
+fun Context.isLandscape(): Boolean {
+    return resources.configuration.orientation === Configuration.ORIENTATION_LANDSCAPE
+}
+
 //----------NetWork----------
 
 /**
@@ -91,6 +100,17 @@ fun Context.isConnected(): Boolean {
     var info = this.getActiveNetworkInfo()
     return info.isConnected
 }
+
+/**
+ * 判断网络是否是移动数据
+ */
+fun Context.isMobileData():Boolean{
+    var info = this.getActiveNetworkInfo()
+    return (null != info
+            && info.isAvailable
+            && info.type == ConnectivityManager.TYPE_MOBILE)
+}
+
 
 @SuppressLint("MissingPermission")
 private fun Context.getActiveNetworkInfo(): NetworkInfo {
