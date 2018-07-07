@@ -10,3 +10,4 @@ fun Bitmap.scale(newWidth: Int, newHeight: Int, recycle: Boolean = false): Bitma
     if (recycle && !this.isRecycled) this.recycle()
     return ret
 }
+
