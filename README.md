@@ -1,14 +1,14 @@
 # Kotlin 常用扩展函数总结
 
-## 1.ImageViewExtends
+## 1.ImageViewExtends(Glide)
 
 | 名称 | 描述| 
 | --- |:---:| 
 | loadImage| 加载图片| 
 |   loadCircleImage  |  加载圆形图片   | 
 |  loadRoundCornerImage   |   加载圆角图片   | 
-|   loadClear  |  取消加载   | 
 |   loadImageByProportion  |  按照图片的宽高比加载   | 
+|   loadClear  |  取消加载   | 
 
 ## 2.ViewExtends
 
