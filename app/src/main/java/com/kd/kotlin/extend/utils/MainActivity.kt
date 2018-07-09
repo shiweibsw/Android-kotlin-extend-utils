@@ -8,9 +8,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        img.loadImage(this,"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1530504284670&di=290348ed26686c9abf5ecc8274f86271&imgtype=0&src=http%3A%2F%2Fg.hiphotos.baidu.com%2Fimage%2Fpic%2Fitem%2Fb7003af33a87e95053e42ae21c385343faf2b449.jpg")
-        img.setOnClickListener {
-            toast(px2dp(48.0f).toString())
-        }
+        img.loadImage(this, "http://c.hiphotos.baidu.com/image/pic/item/fd039245d688d43ffdcaed06711ed21b0ff43be6.jpg")
+        img.loadImageByProportion(0.5f, 1.0f)
     }
 }
