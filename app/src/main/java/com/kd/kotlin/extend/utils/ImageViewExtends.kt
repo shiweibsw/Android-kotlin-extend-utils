@@ -57,7 +57,7 @@ fun ImageView.loadImageByProportion(@IntRange(from = 0, to = 1) widthProportion:
     var screenWidth = 0
     var wm: WindowManager = this.context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
     if (wm == null) {
-        screenWidth = this.context.resources.displayMetrics.widthPixels
+        screenWidth = this.context.resources.displayMetrics.widthPixels - leftMargin - rightMargin
     } else {
         var point = Point()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
@@ -65,7 +65,7 @@ fun ImageView.loadImageByProportion(@IntRange(from = 0, to = 1) widthProportion:
         } else {
             wm.defaultDisplay.getSize(point)
         }
-        screenWidth = point.x
+        screenWidth = point.x - leftMargin - rightMargin
     }
     var para = this.layoutParams
     para.width = (screenWidth * widthProportion).toInt()
@@ -75,7 +75,6 @@ fun ImageView.loadImageByProportion(@IntRange(from = 0, to = 1) widthProportion:
     maxHeight = (screenWidth * widthProportion * heightProportion).toInt()
     scaleType = ImageView.ScaleType.CENTER_CROP
 }
-
 
 
 private fun ImageView.getOptions(placeholder: Int = R.mipmap.ic_launcher, useCache: Boolean = false): RequestOptions {
