@@ -34,7 +34,7 @@ fun ImageView.loadCircleImage(context: Context, path: String, placeholder: Int =
 /**
  * 加载圆角图片
  */
-fun ImageView.loadRoundCornerImage(context: Context, path: String, roundingRadius: Int = 32, placeholder: Int = R.mipmap.ic_launcher, useCache: Boolean = false) {
+fun ImageView.loadRoundCornerImage(context: Context, path: String, roundingRadius: Int = 20, placeholder: Int = R.mipmap.ic_launcher, useCache: Boolean = false) {
     var options = getOptions(placeholder, useCache)
     Glide.with(context).load(path).apply(RequestOptions.bitmapTransform(RoundedCorners(roundingRadius))).apply(options).into(this)
 }

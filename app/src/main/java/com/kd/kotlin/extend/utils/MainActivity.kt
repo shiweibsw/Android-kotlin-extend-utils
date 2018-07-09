@@ -9,8 +9,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        img.loadRoundCornerImage(this, "http://c.hiphotos.baidu.com/image/pic/item/fd039245d688d43ffdcaed06711ed21b0ff43be6.jpg")
-        img.loadImageByProportion(0.33f, 0.6f)
-
+        img.loadImage(this, "http://c.hiphotos.baidu.com/image/pic/item/fd039245d688d43ffdcaed06711ed21b0ff43be6.jpg")
+        img.loadImageByProportion(1/3f, 9/16f)
     }
 }
