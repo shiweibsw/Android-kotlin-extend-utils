@@ -76,13 +76,6 @@ fun Context.getScreenHeight(): Int {
     return point.y
 }
 
-fun Context.isPortrait(): Boolean {
-    return resources.configuration.orientation === Configuration.ORIENTATION_PORTRAIT
-}
-
-fun Context.isLandscape(): Boolean {
-    return resources.configuration.orientation === Configuration.ORIENTATION_LANDSCAPE
-}
 
 //----------NetWork----------
 

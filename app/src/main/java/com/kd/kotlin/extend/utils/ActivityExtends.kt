@@ -2,6 +2,7 @@ package com.kd.kotlin.extend.utils
 
 import android.app.Activity
 import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.util.DisplayMetrics
 import android.view.View
@@ -30,6 +31,15 @@ fun Activity.screenShot(activity: Activity, isDeleteStatusBar: Boolean = true): 
     decorView.destroyDrawingCache()
     return ret!!
 }
+
+fun Activity.isPortrait(): Boolean {
+    return resources.configuration.orientation === Configuration.ORIENTATION_PORTRAIT
+}
+
+fun Activity.isLandscape(): Boolean {
+    return resources.configuration.orientation === Configuration.ORIENTATION_LANDSCAPE
+}
+
 
 /**
  * 设置竖屏
