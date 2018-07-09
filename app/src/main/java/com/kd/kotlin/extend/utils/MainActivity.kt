@@ -12,7 +12,5 @@ class MainActivity : AppCompatActivity() {
         img.setOnClickListener {
             toast(px2dp(48.0f).toString())
         }
-
-
     }
 }
