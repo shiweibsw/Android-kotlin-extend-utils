@@ -46,5 +46,30 @@
 |   isConnected  |  网络是否连接   | 
 |   isMobileData  |  判断网络是否是移动数据   | 
 
+## 5.ActivityExtends
+
+| 名称 | 描述| 
+| --- |:---:| 
+|   screenShot  |  屏幕截图   | 
+|   isPortrait  |  是否竖屏   | 
+|   isLandscape  |  是否横屏   | 
+|   setPortrait  |  设置竖屏   | 
+|   setLandscape  |  设置横屏   | 
+|   setFullScreen  |  设置全屏   | 
+|   showKeyboard  |  显示软键盘   | 
+|   hideKeyboard  |  隐藏软键盘   | 
+
+## 6.BitmapExtends
+
+| 名称 | 描述| 
+| --- |:---:| 
+|   scale  |  bitmap 缩放   | 
+
+## 7.FileExtends
+
+| 名称 | 描述| 
+| --- |:---:| 
+|   getBitmap  |  file 转 bitmap   | 
+
 
 

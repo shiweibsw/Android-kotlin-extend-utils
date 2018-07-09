@@ -32,6 +32,7 @@ fun Activity.screenShot(activity: Activity, isDeleteStatusBar: Boolean = true): 
     return ret!!
 }
 
+
 fun Activity.isPortrait(): Boolean {
     return resources.configuration.orientation === Configuration.ORIENTATION_PORTRAIT
 }
