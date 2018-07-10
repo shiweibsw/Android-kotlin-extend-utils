@@ -32,11 +32,16 @@ fun Activity.screenShot(activity: Activity, isDeleteStatusBar: Boolean = true): 
     return ret!!
 }
 
-
+/**
+ * 是否竖屏
+ */
 fun Activity.isPortrait(): Boolean {
     return resources.configuration.orientation === Configuration.ORIENTATION_PORTRAIT
 }
 
+/**
+ * 是否横屏
+ */
 fun Activity.isLandscape(): Boolean {
     return resources.configuration.orientation === Configuration.ORIENTATION_LANDSCAPE
 }
