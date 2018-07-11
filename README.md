@@ -45,6 +45,7 @@
 |   openWirelessSettings  |  打开网络设置界面   | 
 |   isConnected  |  网络是否连接   | 
 |   isMobileData  |  判断网络是否是移动数据   | 
+|   startHomeActivity  |  退回到桌面   | 
 
 ## 5.ActivityExtends
 

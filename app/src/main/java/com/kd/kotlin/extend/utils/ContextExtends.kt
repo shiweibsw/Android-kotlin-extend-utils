@@ -3,7 +3,6 @@ package com.kd.kotlin.extend.utils
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
-import android.content.res.Configuration
 import android.graphics.Point
 import android.net.ConnectivityManager
 import android.net.NetworkInfo
@@ -97,11 +96,20 @@ fun Context.isConnected(): Boolean {
 /**
  * 判断网络是否是移动数据
  */
-fun Context.isMobileData():Boolean{
+fun Context.isMobileData(): Boolean {
     var info = this.getActiveNetworkInfo()
     return (null != info
             && info.isAvailable
             && info.type == ConnectivityManager.TYPE_MOBILE)
+}
+
+/**
+ * 退回到桌面
+ */
+fun Context.startHomeActivity() {
+    val homeIntent = Intent(Intent.ACTION_MAIN)
+    homeIntent.addCategory(Intent.CATEGORY_HOME)
+    startActivity(homeIntent)
 }
 
 
@@ -110,3 +118,5 @@ private fun Context.getActiveNetworkInfo(): NetworkInfo {
     var manager = this.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     return manager.activeNetworkInfo
 }
+
+
